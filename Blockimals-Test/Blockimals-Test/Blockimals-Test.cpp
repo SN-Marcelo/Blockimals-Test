@@ -1,32 +1,53 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
-#include "animal.h"
+#include "Animal.h"
 #include "Cat.h"
 #include "Dog.h"
+#include "PlayerSelector.cpp"
+
 
 int main() {
-	Cat* cat = new Cat();
-	Dog* dog = new Dog();
+	Animal* player = selectFighter("Player 1");
+	Animal* enemy = selectFighter("Enemy");
 	int attackSelected = 0;
-	std::cout << "Enemy's initial life: " << dog->getLife() << "\n";
+
+	srand(time(NULL));
+
+	std::cout << "===Start Battle===\n";
+	std::cout << "Enemy's initial life: " << enemy->getLife() << "\n";
+
 	while (true) {
 		std::cout << "Enter attack to deal (-1) to see attacks: ";
 		std::cin >> attackSelected;
 		if (attackSelected == -1) {
-			cat->getAttacks();
+			player->getAttacks();
 			continue;
 		}
-		Attack attack = cat->getAttack(attackSelected);
-		std::cout << "Attack: " << attack.Name << '\n';
-		std::cout << "Damage: " << attack.Damage << '\n';
-		dog->reduceLife(attack.Damage, attack.Effect);
-		std::cout << "Enemy's life: " << dog->getLife() << "\n";
-		if (dog->getLife() <= 0) {
-			std::cout << "Enemy dead\n";
+		Attack attack = player->getAttack(attackSelected);
+		std::cout << "You used " << attack.Name << "!\n";
+		enemy->reduceLife(attack.Damage, attack.Effect);
+		std::cout << "Enemy's life: " << enemy->getLife() << '\n';
+		if (enemy->getLife() == 0) {
+			std::cout << "You won!";
 			break;
 		}
-		system("pause");
+		int randomNumberAttack = 1 + rand() % 3;
+		Attack enemyAttack = enemy->getAttack(randomNumberAttack);
+		std::cout << "The enemy used " << enemyAttack.Name << "!\n";
+		player->reduceLife(enemyAttack.Damage, enemyAttack.Effect);
+		std::cout << "Your health: " << player->getLife() << '\n';
+		if (player->getLife() == 0) {
+			std::cout << "You lost!";
+			break;
+		}
+		std::cin.get();
 	}
+
+	delete player;
+	delete enemy;
+	
 	return 0;
 }

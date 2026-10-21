@@ -25,6 +25,9 @@
     <Filter Include="Header Files\Effects">
       <UniqueIdentifier>{7d669af1-00f2-4939-badd-8038af55e0e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Game">
+      <UniqueIdentifier>{d109107a-1754-4ebc-8384-4d75c20bd45f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Blockimals-Test.cpp">
@@ -41,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="Hawk.cpp">
       <Filter>Source Files\Animals</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerSelector.cpp">
+      <Filter>Source Files\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
