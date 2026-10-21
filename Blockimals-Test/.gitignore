@@ -69,3 +69,6 @@ Testing/
 
 #vs
 .vs
+
+#x64/Debug
+x64/
