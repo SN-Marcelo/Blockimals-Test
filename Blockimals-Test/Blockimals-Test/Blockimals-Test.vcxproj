@@ -136,6 +136,7 @@
     <ClInclude Include="Cat.h" />
     <ClInclude Include="Dog.h" />
     <ClInclude Include="Hawk.h" />
+    <ClInclude Include="PlayerSelector.h" />
     <ClInclude Include="SpecialEffect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

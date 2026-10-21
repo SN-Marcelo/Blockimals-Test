@@ -28,6 +28,9 @@
     <Filter Include="Source Files\Game">
       <UniqueIdentifier>{d109107a-1754-4ebc-8384-4d75c20bd45f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Game">
+      <UniqueIdentifier>{5bb40590-3ed5-45fe-9627-98919759b876}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Blockimals-Test.cpp">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Hawk.h">
       <Filter>Header Files\Animals</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSelector.h">
+      <Filter>Header Files\Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

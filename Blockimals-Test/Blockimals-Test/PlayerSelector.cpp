@@ -1,10 +1,11 @@
 #include <iostream>
+#include "PlayerSelector.h"
 #include "Animal.h"
 #include "Cat.h"
 #include "Dog.h"
 #include "Hawk.h"
 
-static Animal* selectFighter(std::string roleTitle) {
+Animal* selectFighter(std::string roleTitle) {
     int choice = 0;
     std::cout << "\n=== SELECT " << roleTitle << " ===\n";
     std::cout << "1. Cat\n";

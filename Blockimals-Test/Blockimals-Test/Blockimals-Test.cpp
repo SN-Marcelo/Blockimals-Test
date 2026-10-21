@@ -6,7 +6,7 @@
 #include "Animal.h"
 #include "Cat.h"
 #include "Dog.h"
-#include "PlayerSelector.cpp"
+#include "PlayerSelector.h"
 
 
 int main() {
