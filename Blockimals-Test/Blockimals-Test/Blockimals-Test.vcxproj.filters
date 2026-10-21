@@ -39,6 +39,9 @@
     <ClCompile Include="Animal.cpp">
       <Filter>Source Files\Animals</Filter>
     </ClCompile>
+    <ClCompile Include="Hawk.cpp">
+      <Filter>Source Files\Animals</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animal.h">
@@ -55,6 +58,9 @@
     </ClInclude>
     <ClInclude Include="SpecialEffect.h">
       <Filter>Header Files\Effects</Filter>
+    </ClInclude>
+    <ClInclude Include="Hawk.h">
+      <Filter>Header Files\Animals</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,6 +3,9 @@
 Cat::Cat() {
 	this->name = "Cat";
 	this->life = 100.00;
+	this->elementalMultiplier[SpecialEffect::Wind] = 0.0f;
+
+	//Attacks
 	this->attacks[0].Name = "Scratch";
 	this->attacks[0].Effect = SpecialEffect::Fire;
 	this->attacks[0].Damage = 10.00;

@@ -3,6 +3,10 @@
 Dog::Dog() {
 	this->name = "Dog";
 	this->life = 120.00;
+	this->elementalMultiplier[SpecialEffect::Electricity] = 0.0f;
+	this->elementalMultiplier[SpecialEffect::Fire] = 1.50f;
+
+	//Attacks
 	this->attacks[0].Name = "Paws";
 	this->attacks[0].Damage = 15.00;
 	this->attacks[0].InitialDelay = 0.02;

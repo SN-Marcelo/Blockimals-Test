@@ -4,18 +4,20 @@
 
 #include "Attack.h"
 #include <string>
+#include <map>
 
 class Animal {
 protected:
-	float maxLife;
-	float life;
-	Attack attacks[4];
-	std::string name;
+	std::string name; //Name of the animal
+	float maxLife; //Max life of the animal
+	float life; //Current amount of life
+	Attack attacks[4]; //Possible attacks
+	std::map<SpecialEffect, float> elementalMultiplier; //Elemental Damage Taken Multiplier
 public:
 	Animal();
 	Animal(std::string name, float life, Attack attacks[]);
-	void getAttacks();
-	float getLife();
+	void getAttacks() const;
+	float getLife() const;
 	void reduceLife(float life, SpecialEffect type);
 	void increaseLife(float life);
 	Attack getAttack(int attackPosition);

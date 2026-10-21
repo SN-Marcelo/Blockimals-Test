@@ -4,6 +4,7 @@
 
 Animal::Animal() {
 	this->life = 100;
+	this->maxLife = this->life;
 	for (int i = 0; i < 4; i++) {
 		this->attacks[i].Damage = 10;
 		this->attacks[i].Name = "Default Attack " + std::to_string(i + 1);
@@ -23,14 +24,14 @@ Animal::Animal(std::string name, float life, Attack attacks[]) {
 	}
 }
 
-void Animal::getAttacks() {
+void Animal::getAttacks() const {
 	std::cout << "Available attacks:\n";
 	for (short i = 0; i < 4; i++) {
 		std::cout << "Attack " << std::to_string(i) << ": " << this->attacks[i].Name << '\n';
 	}
 }
 
-float Animal::getLife() {
+float Animal::getLife() const {
 	return this->life;
 }
 
@@ -55,10 +56,13 @@ Attack Animal::getAttack(int attackPosition) {
 void Animal::HandleEffect(SpecialEffect effect) {
 	switch (effect) {
 	case SpecialEffect::Fire:
+		std::cout << "Damage Multiplier: " << elementalMultiplier[SpecialEffect::Fire] << '\n';
+		if (elementalMultiplier[SpecialEffect::Fire] <= 0.00f)
+			break;
 		std::cout << "Enemy in fire!\n";
 		std::cout << "Initial Life: " << std::to_string(this->life) << '\n';
 		for (short i = 0; i < 3; i++) {
-			this->reduceLife(10, SpecialEffect::Normal);
+			this->reduceLife(10 * elementalMultiplier[SpecialEffect::Fire], SpecialEffect::Normal);
 			std::cout << "Burning...\n";
 		}
 		std::cout << "Fire gone\n";
